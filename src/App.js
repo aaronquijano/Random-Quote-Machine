@@ -1,25 +1,45 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.quotes = [
+      ['To live is to suffer, to survive is to find some meaning in the suffering.', 'Friedrich Nietzsche'],
+      ['The only true wisdom is in knowing you know nothing.', 'Socrates'],
+      ['Know thy self, know thy enemy. A thousand battles, a thousand victories.', 'Sun Tzu']
+    ];
+
+    this.state = {
+      quote: '',
+      author: ''
+    };
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    let index = Math.floor((Math.random() * this.quotes.length) + 1);
+
+    this.setState({
+      quote: this.quotes[index][0],
+      author: this.quotes[index][1]
+    });
+  }
+
+  render() {
+    return (
+      <blockquote id="quote-box">
+        <p id="text">{this.state.quote}</p>
+        <figcaption id="author"></figcaption>
+        <a id="tweet-quote">Tweet</a>
+        <button id="new-quote" onClick={this.handleClick}>New Quote</button>
+      </blockquote>
+    );
+  }
 }
 
 export default App;
