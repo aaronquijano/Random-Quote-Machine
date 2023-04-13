@@ -1,7 +1,56 @@
 #quote-box {
   background: #fff;
   width: 550px;
-  height: 253px;
+  min-height: 253px;
   border-radius: .30rem;
   padding: 2rem;
 }
+
+#text {
+  margin-bottom: 2rem;
+  font-family: 'Tilt Prism';
+  font-weight: 900;
+  font-size: 1.75em;
+}
+
+#author {
+  margin-bottom: 1rem;
+  text-align: end;
+}
+
+.links-container {
+  width: calc(550px - 4rem);
+  bottom: 2rem;
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#tweet-quote {
+  display: block;
+  padding: .5rem 1rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: bold;
+  border-radius: .25em;
+  background-color: #FECC30;
+}
+
+#new-quote {
+  display: block;
+  padding: 1rem;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #FECC30;
+  border-radius: .5em;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
